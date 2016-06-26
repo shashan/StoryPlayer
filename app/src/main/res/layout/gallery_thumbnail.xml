@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dpv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+android:layout_height="200dp"
+android:layout_margin="8dp"
+android:background="@drawable/bar_selector_white"
+android:focusable="true"
+android:clickable="true"
+android:foreground="?android:attr/selectableItemBackground"
+android:orientation="vertical"
+app:cardBackgroundColor="@android:color/white"
+app:cardCornerRadius="4dp"
+app:cardElevation="3dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <com.storyplayer.uicomponent.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/rel_title_layout"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_default_album_art"
+            android:visibility="visible"/>
+        <com.panwrona.downloadprogressbar.library.DownloadProgressBar
+            android:id="@+id/dpv3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            dpv:circleBackgroundColor="@color/md_blue_900"
+            dpv:progressBackgroundColor="@color/md_blue_900"
+            dpv:progressColor="@color/md_blue_50"
+            dpv:drawingColor="@color/md_blue_900"
+
+            dpv:circleRadius="48dp"
+            dpv:lineWidth="3dp"
+            dpv:strokeWidth="3dp"
+            dpv:overshootValue="2.5"/>
+    </com.storyplayer.uicomponent.SquareLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dip">
+
+        <!-- The height is set to half the height of the parent, which is 64 dip -->
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="------"
+            android:textColor="?colorPrimary"
+            android:textSize="15sp" />
+
+        <!-- The height is set to half the height of the parent, which is 64 dip -->
+
+        <TextView
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line1"
+            android:layout_marginTop="1dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="--:-- | -.-- MB"
+            android:textColor="?colorPrimary"
+            android:textSize="11sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>
